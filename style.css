@@ -17,10 +17,10 @@ body {
     padding: 0 5%;
 }
 
-/* --- TABELA (CONTAINER) --- */
+
 .container {
     width: 100%;
-    /* O margin-right abre o espaço exato para o form fixo não atropelar a tabela */
+
     margin-right: 400px; 
 }
 
@@ -28,7 +28,7 @@ body {
     background: #ffffffc7; 
     border-radius: 25px;
     padding: 25px;
-    /* Define a altura máxima e ativa o scroll interno que você pediu */
+  
     max-height: 80vh; 
     overflow-y: auto; 
     box-shadow: 0 10px 30px rgba(0,0,0,0.05);
@@ -45,7 +45,7 @@ th {
     border-bottom: 2px solid #84a98c;
     padding: 15px 10px;
     background: #f8faf6;
-    position: sticky; /* Cabeçalho não foge no scroll */
+    position: sticky; 
     top: 0;
 }
 
@@ -54,14 +54,14 @@ td {
     border-bottom: 1px solid #c7d5b1;
 }
 
-/* Cores alternadas (Zebra) baseadas na sua imagem */
+
 tbody tr:nth-child(even) { background-color: #e2efda99; }
 tbody tr:nth-child(odd) { background-color: #f1f7ec99; }
 
-/* --- FORMULÁRIO (FIXO NA DIREITA) --- */
+
 .form-container {
     position: fixed;
-    right: 40px; /* Distância da borda direita */
+    right: 40px; 
     top: 50%;
     transform: translateY(-50%);
 
@@ -70,7 +70,7 @@ tbody tr:nth-child(odd) { background-color: #f1f7ec99; }
     padding: 40px 30px;
     border-radius: 40px;
     color: white;
-    box-shadow: 0 15px 35px rgba(30, 223, 78, 0.2); /* Sombra debaixo do form */
+    box-shadow: 0 15px 35px rgba(30, 223, 78, 0.2);
     z-index: 10;
 }
 
@@ -92,7 +92,7 @@ tbody tr:nth-child(odd) { background-color: #f1f7ec99; }
 .input-group input {
     width: 100%;
     padding: 12px 20px;
-    border-radius: 25px; /* Inputs ovais */
+    border-radius: 25px; 
     border: none;
     outline: none;
 }
@@ -116,7 +116,7 @@ tbody tr:nth-child(odd) { background-color: #f1f7ec99; }
     transform: scale(1.05);
 }
 
-/* Personalização do Scroll da Tabela */
+
 .tabela-container::-webkit-scrollbar {
     width: 8px;
 }
@@ -125,54 +125,80 @@ tbody tr:nth-child(odd) { background-color: #f1f7ec99; }
     border-radius: 10px;
 }
 
-/* --- VERSÃO MOBILE (Telas menores que 768px) --- */
+
 @media (max-width: 768px) {
     
     body {
         background-image: url('Fundo2.png');
-        display: block; /* Remove o flex do corpo para os elementos empilharem */
+        display: block; 
         padding: 10px;
         height: auto;
     }
 
     .container {
-        margin-right: 0; /* Remove o espaço que era reservado para o form lateral */
+        margin-right: 0;
         width: 100%;
     }
 
     .tabela-container {
-        height: auto;        /* Remove a altura fixa */
-        max-height: none;    /* Remove o limite de altura */
-        overflow-y: visible; /* Remove o rolamento vertical interno */
-        margin-top: 20px;    /* Espaço entre o form e a tabela */
+        height: auto;        
+        max-height: none;   
+        overflow-y: visible; 
+        margin-top: 20px;    
         padding: 15px;
         width: 100%;
     }
 
-    /* Ajuste para a tabela não quebrar o layout lateralmente no celular */
+  
     table {
         display: block;
-        overflow-x: auto; /* Permite rolar a tabela pro lado se for muito larga */
+        overflow-x: auto; 
         white-space: nowrap;
     }
 
     .form-container {
-        position: relative;  /* Deixa de ser fixo */
+        position: relative;  
         top: 0;
         right: 0;
-        transform: none;     /* Remove a centralização vertical */
-        width: 100%;         /* Ocupa a largura toda da tela */
+        transform: none;     
+        width: 100%;         
         margin-bottom: 20px;
-        border-radius: 20px; /* Bordas um pouco menores para mobile */
+        border-radius: 20px;
     }
 
     .form-container h2 {
-        white-space: normal; /* Permite que o título quebre linha se a tela for muito pequena */
+        white-space: normal; 
         text-align: center;
         font-size: 1.5rem;
     }
 
     .btn-cadastrar {
-        width: 100%; /* Botão maior no mobile para facilitar o toque */
+        width: 100%; 
     }
 }
+
+.gatinho {
+    position: fixed;  
+    left: 38%;       
+    top: 50%;        
+    transform: translate(-50%, -50%); 
+    z-index: 1;       
+    pointer-events: none; 
+    max-width: 500px;  
+    height: auto;
+}
+
+
+@media (max-width: 1024px) {
+    .gatinho {
+        max-width: 300px;
+        left: 15%;
+    }
+}
+
+@media (max-width: 768px) {
+    .gatinho {
+        display: none; 
+    }
+}
+

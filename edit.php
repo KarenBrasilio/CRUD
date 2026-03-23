@@ -57,45 +57,53 @@ if (!$user) {
 <html lang="pt-br">
 
 <head>
+    <link rel="stylesheet" href="style.css">
     <meta charset="UTF-8">
     <title>Editar aluno</title>
 </head>
 
 <body>
+    <div class="form-container">
+        <h1>Editar aluno</h1>
 
-    <h1>Editar aluno</h1>
-
-    <!--
+        <!--
         Formulário responsável por enviar os dados atualizados
         para o arquivo update.php.
     -->
-    <form action="update.php" method="post">
-        <!--
+        <form action="update.php" method="post">
+            <!--
             Campo oculto que envia o ID do aluno.
             Ele é necessário para que o update.php saiba
             qual registro deve ser atualizado.
         -->
-        <input type="hidden" name="id" value="<?= $user["id"] ?>">
+            <input type="hidden" name="id" value="<?= $user["id"] ?>">
 
-        <p>
-            <label>Nome:</label><br>
-            <input type="text" name="name" value="<?= htmlspecialchars($user["name"]) ?>" required>
-        </p>
 
-        <p>
-            <label>E-mail:</label><br>
-            <input type="email" name="email" value="<?= htmlspecialchars($user["email"]) ?>" required>
-        </p>
+            <div class="input-group">
+                <label>Nome:</label><br>
+                <input type="text" name="name" value="<?= htmlspecialchars($user["name"]) ?>" required>
+            </div>
 
-        <p>
-            <label>Curso:</label><br>
-            <input type="text" name="document" value="<?= htmlspecialchars($user["document"]) ?>" required>
-        </p>
 
-        <button type="submit">Atualizar</button>
-    </form>
+            <div class="input-group">
+                <label>E-mail:</label><br>
+                <input type="email" name="email" value="<?= htmlspecialchars($user["email"]) ?>" required>
+            </div>
 
-    <p><a href="index.php">Voltar</a></p>
+
+            <div class="input-group">
+                <label>Curso:</label><br>
+                <input type="text" name="document" value="<?= htmlspecialchars($user["document"]) ?>" required>
+            </div>
+
+            <button type="submit" class="btn-cadastrar">Atualizar</button>
+        </form>
+
+        <p><a href="index.php">Voltar</a></p>
+    </div>
+
+    <img src="https://cliply.co/wp-content/uploads/2021/08/472108170_THANK_YOU_STICKER_400px.gif" alt="gatinho" width="600" class="gatinho">
+
 
 </body>
 
